@@ -355,26 +355,26 @@ func (*DeleteUserResponse) Descriptor() ([]byte, []int) {
 	return file_proto_user_user_proto_rawDescGZIP(), []int{6}
 }
 
-type ListUserRequest struct {
+type ListUsersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListUserRequest) Reset() {
-	*x = ListUserRequest{}
+func (x *ListUsersRequest) Reset() {
+	*x = ListUsersRequest{}
 	mi := &file_proto_user_user_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListUserRequest) String() string {
+func (x *ListUsersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListUserRequest) ProtoMessage() {}
+func (*ListUsersRequest) ProtoMessage() {}
 
-func (x *ListUserRequest) ProtoReflect() protoreflect.Message {
+func (x *ListUsersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_user_user_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -386,32 +386,32 @@ func (x *ListUserRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListUserRequest.ProtoReflect.Descriptor instead.
-func (*ListUserRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListUsersRequest.ProtoReflect.Descriptor instead.
+func (*ListUsersRequest) Descriptor() ([]byte, []int) {
 	return file_proto_user_user_proto_rawDescGZIP(), []int{7}
 }
 
-type ListUserResponse struct {
+type ListUsersResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Users         []*User                `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ListUserResponse) Reset() {
-	*x = ListUserResponse{}
+func (x *ListUsersResponse) Reset() {
+	*x = ListUsersResponse{}
 	mi := &file_proto_user_user_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ListUserResponse) String() string {
+func (x *ListUsersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListUserResponse) ProtoMessage() {}
+func (*ListUsersResponse) ProtoMessage() {}
 
-func (x *ListUserResponse) ProtoReflect() protoreflect.Message {
+func (x *ListUsersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_proto_user_user_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -423,12 +423,12 @@ func (x *ListUserResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListUserResponse.ProtoReflect.Descriptor instead.
-func (*ListUserResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListUsersResponse.ProtoReflect.Descriptor instead.
+func (*ListUsersResponse) Descriptor() ([]byte, []int) {
 	return file_proto_user_user_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ListUserResponse) GetUsers() []*User {
+func (x *ListUsersResponse) GetUsers() []*User {
 	if x != nil {
 		return x.Users
 	}
@@ -546,27 +546,25 @@ const file_proto_user_user_proto_rawDesc = "" +
 	".user.UserR\x04user\"#\n" +
 	"\x11DeleteUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"\x14\n" +
-	"\x12DeleteUserResponse\"\x11\n" +
-	"\x0fListUserRequest\"4\n" +
-	"\x10ListUserResponse\x12 \n" +
+	"\x12DeleteUserResponse\"\x12\n" +
+	"\x10ListUsersRequest\"5\n" +
+	"\x11ListUsersResponse\x12 \n" +
 	"\x05users\x18\x01 \x03(\v2\n" +
 	".user.UserR\x05users\" \n" +
 	"\x0eGetUserRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\"1\n" +
 	"\x0fGetUserResponse\x12\x1e\n" +
 	"\x04user\x18\x01 \x01(\v2\n" +
-	".user.UserR\x04user2\xaf\x02\n" +
+	".user.UserR\x04user2\xc6\x02\n" +
 	"\vUserService\x12?\n" +
 	"\n" +
-	"CreateUser\x12\x17.user.CreateUserRequest\x1a\x18.user.CreateUserResponse\x12!\n" +
-	"\aGetUser\x12\n" +
-	".user.User\x1a\n" +
-	".user.User\x12?\n" +
+	"CreateUser\x12\x17.user.CreateUserRequest\x1a\x18.user.CreateUserResponse\x126\n" +
+	"\aGetUser\x12\x14.user.GetUserRequest\x1a\x15.user.GetUserResponse\x12?\n" +
 	"\n" +
 	"UpdateUser\x12\x17.user.UpdateUserRequest\x1a\x18.user.UpdateUserResponse\x12?\n" +
 	"\n" +
-	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponse\x12:\n" +
-	"\tListUsers\x12\x15.user.ListUserRequest\x1a\x16.user.ListUserResponseB6Z4github.com/arslannnnn/project-protos/proto/user;userb\x06proto3"
+	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponse\x12<\n" +
+	"\tListUsers\x12\x16.user.ListUsersRequest\x1a\x17.user.ListUsersResponseB6Z4github.com/arslannnnn/project-protos/proto/user;userb\x06proto3"
 
 var (
 	file_proto_user_user_proto_rawDescOnce sync.Once
@@ -589,31 +587,31 @@ var file_proto_user_user_proto_goTypes = []any{
 	(*UpdateUserResponse)(nil), // 4: user.UpdateUserResponse
 	(*DeleteUserRequest)(nil),  // 5: user.DeleteUserRequest
 	(*DeleteUserResponse)(nil), // 6: user.DeleteUserResponse
-	(*ListUserRequest)(nil),    // 7: user.ListUserRequest
-	(*ListUserResponse)(nil),   // 8: user.ListUserResponse
+	(*ListUsersRequest)(nil),   // 7: user.ListUsersRequest
+	(*ListUsersResponse)(nil),  // 8: user.ListUsersResponse
 	(*GetUserRequest)(nil),     // 9: user.GetUserRequest
 	(*GetUserResponse)(nil),    // 10: user.GetUserResponse
 }
 var file_proto_user_user_proto_depIdxs = []int32{
-	0, // 0: user.CreateUserResponse.user:type_name -> user.User
-	0, // 1: user.UpdateUserResponse.user:type_name -> user.User
-	0, // 2: user.ListUserResponse.users:type_name -> user.User
-	0, // 3: user.GetUserResponse.user:type_name -> user.User
-	1, // 4: user.UserService.CreateUser:input_type -> user.CreateUserRequest
-	0, // 5: user.UserService.GetUser:input_type -> user.User
-	3, // 6: user.UserService.UpdateUser:input_type -> user.UpdateUserRequest
-	5, // 7: user.UserService.DeleteUser:input_type -> user.DeleteUserRequest
-	7, // 8: user.UserService.ListUsers:input_type -> user.ListUserRequest
-	2, // 9: user.UserService.CreateUser:output_type -> user.CreateUserResponse
-	0, // 10: user.UserService.GetUser:output_type -> user.User
-	4, // 11: user.UserService.UpdateUser:output_type -> user.UpdateUserResponse
-	6, // 12: user.UserService.DeleteUser:output_type -> user.DeleteUserResponse
-	8, // 13: user.UserService.ListUsers:output_type -> user.ListUserResponse
-	9, // [9:14] is the sub-list for method output_type
-	4, // [4:9] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0,  // 0: user.CreateUserResponse.user:type_name -> user.User
+	0,  // 1: user.UpdateUserResponse.user:type_name -> user.User
+	0,  // 2: user.ListUsersResponse.users:type_name -> user.User
+	0,  // 3: user.GetUserResponse.user:type_name -> user.User
+	1,  // 4: user.UserService.CreateUser:input_type -> user.CreateUserRequest
+	9,  // 5: user.UserService.GetUser:input_type -> user.GetUserRequest
+	3,  // 6: user.UserService.UpdateUser:input_type -> user.UpdateUserRequest
+	5,  // 7: user.UserService.DeleteUser:input_type -> user.DeleteUserRequest
+	7,  // 8: user.UserService.ListUsers:input_type -> user.ListUsersRequest
+	2,  // 9: user.UserService.CreateUser:output_type -> user.CreateUserResponse
+	10, // 10: user.UserService.GetUser:output_type -> user.GetUserResponse
+	4,  // 11: user.UserService.UpdateUser:output_type -> user.UpdateUserResponse
+	6,  // 12: user.UserService.DeleteUser:output_type -> user.DeleteUserResponse
+	8,  // 13: user.UserService.ListUsers:output_type -> user.ListUsersResponse
+	9,  // [9:14] is the sub-list for method output_type
+	4,  // [4:9] is the sub-list for method input_type
+	4,  // [4:4] is the sub-list for extension type_name
+	4,  // [4:4] is the sub-list for extension extendee
+	0,  // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_proto_user_user_proto_init() }

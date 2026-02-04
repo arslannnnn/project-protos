@@ -19,10 +19,10 @@ message CreateUserResponse {
 
 service UserService {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse);
-  rpc GetUser    (User)              returns (User);
+  rpc GetUser    (GetUserRequest)    returns (GetUserResponse);
   rpc UpdateUser (UpdateUserRequest) returns (UpdateUserResponse);
   rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
-  rpc ListUsers (ListUserRequest) returns (ListUserResponse);
+  rpc ListUsers (ListUsersRequest) returns (ListUsersResponse);
 }
 
 message UpdateUserRequest{
@@ -41,9 +41,9 @@ message DeleteUserRequest{
 
 message DeleteUserResponse{}
 
-message ListUserRequest{}
+message ListUsersRequest{}
 
-message ListUserResponse{
+message ListUsersResponse{
     repeated User users = 1;
 }
 
