@@ -5,11 +5,14 @@ option go_package = "github.com/arslannnnn/project-protos/proto/task;task";
 // Сущность задача
 message Task {
   uint32 id      = 1;
-  string title   = 2;
+  uint32 user_id = 2;
+  string title   = 3;
+  bool is_done   = 4;
 }
 
 message CreateTaskRequest {
-  string title = 1;
+  uint32 user_id = 1;
+  string title = 2;
 }
 message CreateTaskResponse {
   Task task = 1;
@@ -17,16 +20,17 @@ message CreateTaskResponse {
 
 service TaskService {
   rpc CreateTask (CreateTaskRequest) returns (CreateTaskResponse);
-  rpc GetTask    (Task)             returns (Task);
-  // TODO: дописать ListTasks, UpdateTask, DeleteTask
+  rpc GetTask    (GetTaskRequest)    returns (GetTaskResponse);
   rpc UpdateTask (UpdateTaskRequest) returns (UpdateTaskResponse);
   rpc DeleteTask (DeleteTaskRequest) returns (DeleteTaskResponse);
-  rpc ListTasks (ListTaskRequest) returns (ListTaskResponse);
+  rpc ListTasks (ListTasksRequest) returns (ListTasksResponse);
+  rpc ListTasksByUser (ListTasksByUserRequest) returns (ListTasksByUserResponse);
 }
 
 message UpdateTaskRequest{
     uint32 id = 1;
     string title = 2;
+    bool is_done = 3;
 }
 
 message UpdateTaskResponse{
@@ -41,11 +45,24 @@ message DeleteTaskResponse{
     bool ok = 1;
 }
 
-message ListTaskRequest{
-    uint32 limit = 1;
-    uint32 offset = 2;
+message ListTasksRequest{}
+
+message ListTasksResponse{
+    repeated Task tasks = 1;
 }
 
-message ListTaskResponse{
-    repeated Task tasks = 1;
+message GetTaskRequest{
+  uint32 id = 1;
+}
+
+message GetTaskResponse{
+  Task task = 1;
+}
+
+message ListTasksByUserRequest{
+  uint32 user_id = 1;
+}
+
+message ListTasksByUserResponse{
+  repeated Task tasks = 1;
 }
